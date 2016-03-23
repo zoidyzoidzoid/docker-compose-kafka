@@ -20,6 +20,8 @@ spec:
         - name: server
           image: wurstmeister/kafka:latest
           env:
+            - name: KAFKA_LOG_DIRS
+              value: /kafka
             - name: KAFKA_ADVERTISED_HOST_NAME
               value: 192.168.99.100
             - name: KAFKA_ADVERTISED_PORT
@@ -57,6 +59,8 @@ spec:
         - name: server
           image: wurstmeister/kafka:latest
           env:
+            - name: KAFKA_LOG_DIRS
+              value: /kafka
             - name: KAFKA_ADVERTISED_HOST_NAME
               value: 192.168.99.100
             - name: KAFKA_ADVERTISED_PORT
@@ -94,6 +98,8 @@ spec:
         - name: server
           image: wurstmeister/kafka:latest
           env:
+            - name: KAFKA_LOG_DIRS
+              value: /kafka
             - name: KAFKA_CREATE_TOPICS
               value: test-topic-1:1:2,test-topic-2:1:2,test-topic-3:1:2
             - name: KAFKA_ADVERTISED_HOST_NAME
