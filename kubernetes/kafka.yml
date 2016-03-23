@@ -14,7 +14,7 @@ spec:
       volumes:
         - name: data
           gcePersistentDisk:
-            pdName: kafka1
+            pdName: kafka-1
             fsType: ext4
       containers:
         - name: server
@@ -53,7 +53,7 @@ spec:
       volumes:
         - name: data
           gcePersistentDisk:
-            pdName: kafka2
+            pdName: kafka-2
             fsType: ext4
       containers:
         - name: server
@@ -92,7 +92,7 @@ spec:
       volumes:
         - name: data
           gcePersistentDisk:
-            pdName: kafka3
+            pdName: kafka-3
             fsType: ext4
       containers:
         - name: server
