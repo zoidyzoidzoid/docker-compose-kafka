@@ -37,4 +37,5 @@ The Kafka brokers are on different external ports because I'd like to have them 
 ## Future Work
 
 - Kafka brokers and Zookeeper servers that support dynamic scaling
+- Dynamic but cross-instance persistent broker IDs for Kafka
 - Change to properly tagged latest Zookeeper and Kafka images

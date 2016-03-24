@@ -6,7 +6,7 @@ Three broker Kafka cluster and three node Zookeeper ensemble running in Docker w
 
 Based on @eliaslevy's work on a Zookeeper cluster in Kubernetes [here](https://github.com/eliaslevy/docker-zookeeper), and @wurstmeister's Kafka docker-compose [here](https://github.com/wurstmeister/kafka-docker).
 
-Kafka v0.9.0 has made multi-broker cloud set ups easier because it can assign its own broker IDs now instead of you having to configure them manually, but it still seems to require unique `host:port` combinations.
+Kafka requires unique `host:port` combinations, and can try assign its own broker IDs, but the issue with it assigning its own broker IDs is that they aren't persistent across container restarts. It would probably be better to hardcode `KAFKA_BROKER_ID` for each instance for now, or you get "Leader Not Available" issues.
 
 I made this while experimenting with setting up Kafka in Kubernetes. I have included the Kubernetes config files and instructions for setting up a multi-broker Kafka cluster and Zookeeper ensemble [here](https://github.com/zoidbergwill/docker-compose-kafka/kubernetes/).
 
