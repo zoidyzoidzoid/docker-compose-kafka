@@ -21,7 +21,7 @@ spec:
           image: wurstmeister/kafka:latest
           env:
             - name: KAFKA_LOG_DIRS
-              value: /kafka
+              value: /kafka/kafka-1
             - name: KAFKA_BROKER_ID
               value: "1"
             - name: KAFKA_ADVERTISED_HOST_NAME
@@ -62,7 +62,7 @@ spec:
           image: wurstmeister/kafka:latest
           env:
             - name: KAFKA_LOG_DIRS
-              value: /kafka
+              value: /kafka/kafka-2
             - name: KAFKA_BROKER_ID
               value: "2"
             - name: KAFKA_ADVERTISED_HOST_NAME
@@ -103,7 +103,7 @@ spec:
           image: wurstmeister/kafka:latest
           env:
             - name: KAFKA_LOG_DIRS
-              value: /kafka
+              value: /kafka/kafka-3
             - name: KAFKA_BROKER_ID
               value: "3"
             - name: KAFKA_CREATE_TOPICS
