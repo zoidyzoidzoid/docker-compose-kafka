@@ -6,6 +6,12 @@ The Kafka brokers are on different external ports because I'd like to have them 
 
 ## Usage
 
+1. Attach labels to nodes
+
+  ```sh
+  $ count=0; for node in $(kubectl get nodes -o=jsonpath="{.items[*].metadata.name}"); do count=$(((count+1))); kubectl label nodes $node custom/node-id=$count; done
+  ```
+
 1. Create the Zookeeper services, Zookeeper replication controllers, and Kafka services
 
   ```sh

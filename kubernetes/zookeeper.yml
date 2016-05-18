@@ -57,14 +57,15 @@ spec:
     app: zookeeper
     server-id: "3"
 ---
-apiVersion: v1
-kind: ReplicationController
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
-  name: zookeeper-1
+  name: zookeeper-1-deployment
 spec:
   replicas: 1
   template:
     metadata:
+      name: zookeeper-1
       labels:
         app: zookeeper
         server-id: "1"
@@ -94,15 +95,18 @@ spec:
               name: data
             - mountPath: /zookeeper/wal
               name: wal
+      nodeSelector:
+        custom/node-id: "1"
 ---
-apiVersion: v1
-kind: ReplicationController
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
-  name: zookeeper-2
+  name: zookeeper-2-deployment
 spec:
   replicas: 1
   template:
     metadata:
+      name: zookeeper-2
       labels:
         app: zookeeper
         server-id: "2"
@@ -132,15 +136,18 @@ spec:
               name: data
             - mountPath: /zookeeper/wal
               name: wal
+      nodeSelector:
+        custom/node-id: "2"
 ---
-apiVersion: v1
-kind: ReplicationController
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
-  name: zookeeper-3
+  name: zookeeper-3-deployment
 spec:
   replicas: 1
   template:
     metadata:
+      name: zookeeper-3
       labels:
         app: zookeeper
         server-id: "3"
@@ -170,3 +177,5 @@ spec:
               name: data
             - mountPath: /zookeeper/wal
               name: wal
+      nodeSelector:
+        custom/node-id: "3"
